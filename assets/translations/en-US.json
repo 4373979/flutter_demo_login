@@ -1,0 +1,42 @@
+{
+  "form": {
+    "username": "User ID",
+    "password": "Password"
+  },
+  "button": {
+    "cancel": "Cancel",
+    "login": "Log in",
+    "signUp": "Sign up"
+  },
+  "language": {
+    "name": {
+      "en": "English",
+      "zh": "Chinese"
+    },
+    "selection": {
+      "message": "Please select a language from the list",
+      "title": "Language Selection"
+    }
+  },
+  "title": {
+    "home": "HomePage",
+    "scan_code_login": "Scan code login"
+  },
+  "qr_code_scanning": "Qr code scanning",
+  "log_out": "log out",
+  "fingerprint_login": "Fingerprint login",
+  "enabled": "enabled",
+  "disabled": "disabled",
+  "scan_fingerprint": "Scan a fingerprint for identification",
+  "not_scan_anything": "Did not recognize anything",
+  "return_text": "return",
+  "trying_computer_browser_login": "Trying computer browser login",
+  "confirm_yourself": "Please confirm whether it is operated by yourself",
+  "confirm_login": "Confirm login",
+  "web_login_successfully": "Web login successfully",
+  "web_login_failed": "Web login failed",
+  "login_failed": "login failed",
+  "logout": "Logout",
+  "personal_information": "personal information",
+  "cancel": "cancel"
+}

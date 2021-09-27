@@ -1,0 +1,42 @@
+{
+  "form": {
+    "username": "用户名",
+    "password": "用户密码"
+  },
+  "button": {
+    "cancel": "取消",
+    "login": "登录",
+    "signUp": "注册"
+  },
+  "language": {
+    "name": {
+      "en": "英语",
+      "zh": "中文"
+    },
+    "selection": {
+      "message": "请从列表中选择一种语言",
+      "title": "选择语言"
+    }
+  },
+  "title": {
+    "home": "主页",
+    "scan_code_login": "扫码登录"
+  },
+  "qr_code_scanning": "二维码扫描",
+  "log_out": "退出登录",
+  "fingerprint_login": "指纹登陆",
+  "enabled": "已开启",
+  "disabled": "未开启",
+  "scan_fingerprint": "扫描指纹进行身份识别",
+  "not_scan_anything": "什么都没有识别到",
+  "return_text": "返回",
+  "trying_computer_browser_login": "正在尝试电脑浏览器登录",
+  "confirm_yourself": "请确认是否本人操作",
+  "confirm_login": "确认登录",
+  "web_login_successfully": "网页登录成功",
+  "web_login_failed": "网页登录失败",
+  "login_failed": "登录失败",
+  "logout": "注销",
+  "personal_information": "个人信息",
+  "cancel": "取消"
+}
