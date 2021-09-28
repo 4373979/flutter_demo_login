@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_login/db/qr_login_db.dart';
 import 'package:flutter_demo_login/db/token_db.dart';
 import 'package:flutter_demo_login/services/qr_login_service.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -73,7 +72,6 @@ class QrLoginPage extends StatelessWidget {
     print(_uniqueId);
     String? userToken = await getUserToken();
     bool flag = await QrLoginService().qrLoginRequest(_uniqueId,userToken!);
-    // await QrLoginDb().delQrLogin();
     if(flag){
       Fluttertoast.showToast(
           msg: 'web_login_successfully'.tr(),

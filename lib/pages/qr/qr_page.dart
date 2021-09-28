@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_login/db/qr_login_db.dart';
 import 'package:scan/scan.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -43,8 +42,7 @@ class QrPage extends StatelessWidget {
                             fontSize: 16.0
                         );
                       } else {
-                        print("data:$data");
-                        // await QrLoginDb().setQrLogin(data);
+                        // print("data:$data");
                         Navigator.pushNamed(context,"/qrLogin",arguments: data);
                       }
                     },
