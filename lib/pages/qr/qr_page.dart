@@ -44,10 +44,8 @@ class QrPage extends StatelessWidget {
                         );
                       } else {
                         print("data:$data");
-                        await QrLoginDb().setQrLogin(data);
-                        Navigator.pushNamed(
-                            context,
-                            "/qrLogin");
+                        // await QrLoginDb().setQrLogin(data);
+                        Navigator.pushNamed(context,"/qrLogin",arguments: data);
                       }
                     },
                   ),
@@ -58,8 +56,8 @@ class QrPage extends StatelessWidget {
         ),
       ),
     );
-
   }
+
   Widget buildFloatingActionButton(BuildContext context){
     return FloatingActionButton(
       elevation: 0,

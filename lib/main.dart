@@ -104,8 +104,8 @@ class _MyAppState extends State<MyApp> {
             supportedLocales: context.supportedLocales,
             locale: context.locale,
             routes: routes(),
-            // home: const HomePage(),
-            home: flag?HomePage():LoginPage(),
+            initialRoute: flag?'/home':'/login',
+            // initialRoute: true?'/home':'/login',
           );
         }
     );

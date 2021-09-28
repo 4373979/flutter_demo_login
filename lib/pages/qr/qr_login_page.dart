@@ -5,31 +5,7 @@ import 'package:flutter_demo_login/services/qr_login_service.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:easy_localization/easy_localization.dart';
 
-class QrLoginPage extends StatefulWidget {
-  const QrLoginPage({Key? key}) : super(key: key);
-
-  @override
-  _QrLoginPageState createState() => _QrLoginPageState();
-}
-
-class _QrLoginPageState extends State<QrLoginPage> {
-  String? uniqueId;
-  String? userToken;
-
-  Future<void> getQrLoginSave() async {
-    uniqueId = await QrLoginDb().getQrLogin();
-  }
-
-  Future<void> getUserToken() async {
-    userToken = await TokenDb().getToken();
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getQrLoginSave();
-    getUserToken();
-  }
+class QrLoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +40,7 @@ class _QrLoginPageState extends State<QrLoginPage> {
               textColor: Colors.white,
               minWidth: 200,
               onPressed: () {
-                qrLogin();
+                qrLogin(context);
                 Navigator.pushNamed(
                     context,
                     "/home");
@@ -87,9 +63,17 @@ class _QrLoginPageState extends State<QrLoginPage> {
     );
   }
 
-  Future<void> qrLogin() async {
-    bool flag = await QrLoginService().qrLoginRequest(uniqueId!,userToken!);
-    await QrLoginDb().delQrLogin();
+  Future<String?> getUserToken() async {
+    String? userToken = await TokenDb().getToken();
+    return userToken;
+  }
+
+  Future<void> qrLogin(BuildContext context) async {
+    String _uniqueId = ModalRoute.of(context)!.settings.arguments.toString();
+    print(_uniqueId);
+    String? userToken = await getUserToken();
+    bool flag = await QrLoginService().qrLoginRequest(_uniqueId,userToken!);
+    // await QrLoginDb().delQrLogin();
     if(flag){
       Fluttertoast.showToast(
           msg: 'web_login_successfully'.tr(),
