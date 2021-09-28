@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_demo_login/db/login_db.dart';
 import 'package:flutter_demo_login/db/token_db.dart';
 import 'package:flutter_demo_login/models/login_model.dart';
 import 'package:flutter_demo_login/models/third_party_login_model.dart';
@@ -23,6 +24,34 @@ class _LoginPageState extends State<LoginPage> {
   String username = '';
   String password = '';
   final _formKey = GlobalKey<FormState>();
+
+  final GoogleSignIn _googleSignIn = GoogleSignIn(
+    scopes: <String>[
+      'email',
+      'https://www.googleapis.com/auth/contacts.readonly',
+    ],
+  );
+
+  Future<void> _handleSignOut() async {
+    _googleSignIn.disconnect();
+  }
+
+  Future<void> logout() async {
+    await LoginDb().logout().then((value) => _handleSignOut());
+  }
+
+  Future<void> checklogin() async {
+    String? token = await TokenDb().getToken();
+    if(token!=null){
+      logout();
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    checklogin();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -264,13 +293,6 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
-  final GoogleSignIn _googleSignIn = GoogleSignIn(
-    scopes: <String>[
-      'email',
-      'https://www.googleapis.com/auth/contacts.readonly',
-    ],
-  );
 
   UserCredential? userCredential;
 
