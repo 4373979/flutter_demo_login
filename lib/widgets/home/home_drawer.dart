@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_login/db/login_db.dart';
 import 'package:flutter_demo_login/models/user_info_model.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_demo_login/pages/login/login_page.dart';
+import 'package:flutter_demo_login/widgets/login/login_function.dart';
 
 class HomeDrawer extends StatefulWidget {
 
@@ -24,25 +25,26 @@ class _HomeDrawerState extends State<HomeDrawer> {
     userInfoModel=widget.userInfoModel;
   }
 
-  final GoogleSignIn _googleSignIn = GoogleSignIn(
-    scopes: <String>[
-      'email',
-      'https://www.googleapis.com/auth/contacts.readonly',
-    ],
-  );
+  // final GoogleSignIn _googleSignIn = GoogleSignIn(
+  //   scopes: <String>[
+  //     'email',
+  //     'https://www.googleapis.com/auth/contacts.readonly',
+  //   ],
+  // );
+  //
+  // Future<void> _handleSignOut() async {
+  //   googleSignIn.signOut();
+  //   googleSignIn.disconnect();
+  // }
 
-  Future<void> _handleSignOut() async {
-    _googleSignIn.disconnect();
-  }
-
-  Future<void> logout() async {
-    await LoginDb().logout()
-        .then((value) => _handleSignOut())
-        .then((value) =>
-        Navigator.pushReplacementNamed(
-        context,
-        "/login"));
-  }
+  // Future<void> logout() async {
+  //   await LoginDb().logout()
+  //       .then((value) => _handleSignOut())
+  //       .then((value) =>
+  //       Navigator.pushReplacementNamed(
+  //       context,
+  //       "/login"));
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +91,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
             ),
             title: Text('logout'.tr()),
             onTap: (){
-              logout();
+              logout(context);
             },
           ),
         ],

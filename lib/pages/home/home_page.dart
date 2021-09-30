@@ -3,10 +3,11 @@ import 'package:flutter_demo_login/db/finger_db.dart';
 import 'package:flutter_demo_login/db/login_db.dart';
 import 'package:flutter_demo_login/db/user_info_db.dart';
 import 'package:flutter_demo_login/models/user_info_model.dart';
+import 'package:flutter_demo_login/pages/login/login_page.dart';
 import 'package:flutter_demo_login/widgets/home/home_drawer.dart';
 import 'package:flutter_demo_login/widgets/home/home_menu_botton.dart';
+import 'package:flutter_demo_login/widgets/login/login_function.dart';
 import 'package:local_auth/local_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class HomePage extends StatefulWidget {
@@ -55,7 +56,7 @@ class _HomePageState extends State<HomePage> {
             // _scan();
           }),
           IconButton(icon: Icon(Icons.logout),tooltip: 'log_out'.tr(), onPressed: (){
-            logout();
+            logout(context);
           }),
         ],
       ),
@@ -113,25 +114,26 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  final GoogleSignIn _googleSignIn = GoogleSignIn(
-    scopes: <String>[
-      'email',
-      'https://www.googleapis.com/auth/contacts.readonly',
-    ],
-  );
+  // final GoogleSignIn _googleSignIn = GoogleSignIn(
+  //   scopes: <String>[
+  //     'email',
+  //     'https://www.googleapis.com/auth/contacts.readonly',
+  //   ],
+  // );
 
-  Future<void> _handleSignOut() async {
-    _googleSignIn.disconnect();
-  }
-
-  Future<void> logout() async {
-    await LoginDb().logout()
-        .then((value) => _handleSignOut())
-        .then((value) =>
-        Navigator.pushReplacementNamed(
-            context,
-            "/login"));
-  }
+  // Future<void> _handleSignOut() async {
+  //   googleSignIn.signOut();
+  //   googleSignIn.disconnect();
+  // }
+  //
+  // Future<void> logout() async {
+  //   await LoginDb().logout()
+  //       .then((value) => _handleSignOut())
+  //       .then((value) =>
+  //       Navigator.pushReplacementNamed(
+  //           context,
+  //           "/login"));
+  // }
 
   Future<void> flagCheck() async {
     bool flagBool = await FingerDb().getFinger();
