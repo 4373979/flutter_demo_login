@@ -1,11 +1,11 @@
 {
   "form": {
-    "username": "User ID",
+    "username": "Username",
     "password": "Password"
   },
   "button": {
     "cancel": "Cancel",
-    "login": "Log in",
+    "login": "LOG IN",
     "signUp": "Sign up"
   },
   "language": {
@@ -38,5 +38,9 @@
   "login_failed": "login failed",
   "logout": "Logout",
   "personal_information": "personal information",
-  "cancel": "cancel"
+  "cancel": "cancel",
+  "or_login_with": "OR Login with",
+  "forget_password": "Forgot pwd?",
+  "do_not_have_an_account": "Don't have an account?",
+  "sign_up": "Sign Up"
 }

@@ -1,7 +1,7 @@
 {
   "form": {
     "username": "用户名",
-    "password": "用户密码"
+    "password": "密码"
   },
   "button": {
     "cancel": "取消",
@@ -38,5 +38,9 @@
   "login_failed": "登录失败",
   "logout": "注销",
   "personal_information": "个人信息",
-  "cancel": "取消"
+  "cancel": "取消",
+  "or_login_with": "或登录",
+  "forget_password": "忘记密码？",
+  "do_not_have_an_account": "没有账号？",
+  "sign_up": "立即注册"
 }

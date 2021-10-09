@@ -106,7 +106,7 @@ class _MyAppState extends State<MyApp> {
             supportedLocales: context.supportedLocales,
             locale: context.locale,
             routes: routes(),
-            initialRoute: flag?'/home':'/login',
+            initialRoute: flag?'/home':'/login2',
             // initialRoute: true?'/home':'/login',
           );
         }
