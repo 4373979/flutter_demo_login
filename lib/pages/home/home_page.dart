@@ -3,7 +3,6 @@ import 'package:flutter_demo_login/db/finger_db.dart';
 import 'package:flutter_demo_login/db/login_db.dart';
 import 'package:flutter_demo_login/db/user_info_db.dart';
 import 'package:flutter_demo_login/models/user_info_model.dart';
-import 'package:flutter_demo_login/pages/login/login_page.dart';
 import 'package:flutter_demo_login/widgets/home/home_drawer.dart';
 import 'package:flutter_demo_login/widgets/home/home_menu_botton.dart';
 import 'package:flutter_demo_login/widgets/login/login_function.dart';
